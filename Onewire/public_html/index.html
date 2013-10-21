@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Ajax und Formulare</title>
+<meta http-equiv="Content-Script-Type"
+	content="text/javascript" />
+</head>
+
+<body>
+Temperatur
+<h1 id="temperature">
+</h1>
+</body>
+
+<script type="text/javascript">
+
+var req = null;
+var myVar=setInterval(function(){getTemp()},1000);
+
+function getXMLHttpRequest() {
+	var httpReq = null;
+	if (window.XMLHttpRequest) {
+		httpReq = new XMLHttpRequest();
+	} else if (typeof ActiveXObject != "undefined") {
+		httpReq = new ActiveXObject("Microsoft.XMLHTTP");
+	}
+	return httpReq;
+}
+
+function sendRequest(url, handler) {
+	req = getXMLHttpRequest();
+	if (req) {
+		req.onreadystatechange = handler;
+		req.open("get", url + "?value=", true);
+		req.send(null);
+	}
+}
+
+function getTemp() {
+	sendRequest("temperature.py", showTemp);
+}
+
+function showTemp() {
+	if (req.readyState == 4) {
+		var str = req.responseText;
+		document.getElementById("temperature").innerHTML = str + "&deg C";
+	}
+}
+
+</script>
+
+</html>
