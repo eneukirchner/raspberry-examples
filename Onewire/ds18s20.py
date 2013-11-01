@@ -30,8 +30,6 @@ def read_temp():
         return temp_c
 	
 while True:
-	ts = time.time()
-        st = datetime.datetime.fromtimestamp(ts).strftime('%H:%M')
-	print(st + ' ' + repr(round(read_temp(),1)))	
+	print(repr(round(read_temp(),1)))	
 	time.sleep(1)
 
