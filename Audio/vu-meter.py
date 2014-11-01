@@ -35,12 +35,12 @@ class VuMeter(QtGui.QMainWindow):
 		self.show()
         
         def getPCM(self):
-			l, data = self.inp.read()
-			hi = 32768.0
-			if l > 0:
-				# vu = 20*math.log(max(audioop.max(data, 2),1)/hi)
-				vu = audioop.max(data,2)
-				self.bar.setValue(vu)
+		l, data = self.inp.read()
+		hi = 32768.0
+		if l > 0:
+			# vu = 20*math.log(max(audioop.max(data, 2),1)/hi)
+			vu = audioop.max(data,2)
+			self.bar.setValue(vu)
 		      
 def main():
 	app = QtGui.QApplication(sys.argv)
