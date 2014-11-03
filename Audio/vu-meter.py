@@ -11,7 +11,7 @@ import math
 class VuMeter(QtGui.QWidget):
         def __init__(self, parent=None):
                 QtGui.QWidget.__init__(self, parent)
-                self.inp = alsaaudio.PCM(alsaaudio.PCM_CAPTURE,alsaaudio.PCM_NONBLOCK, 'sysdefault:CARD=Q9000')
+                self.inp = alsaaudio.PCM(alsaaudio.PCM_CAPTURE,alsaaudio.PCM_NONBLOCK, 'sysdefault:CARD=AUDIO')
                 #self.inp = alsaaudio.PCM(alsaaudio.PCM_CAPTURE,alsaaudio.PCM_NONBLOCK)
                 self.inp.setchannels(1)                          
                 self.inp.setrate(8000)                           
@@ -22,10 +22,10 @@ class VuMeter(QtGui.QWidget):
                 self.timer.timeout.connect(self.getPCM)
                 self.timer.start(5)
                 
-                # self.setGeometry(20, 20, 280, 220)
+                self.setGeometry(0, 20, 320, 200)
                 self.setWindowTitle('VU Meter')
                 self.bar = QtGui.QProgressBar(self)
-                self.bar.setGeometry(0, 0, 300,40 )
+                self.bar.setGeometry(30, 80, 260, 40 )
                 
                 self.steps = float(32768)
                 self.min = 20*math.log10(1/self.steps)
