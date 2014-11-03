@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'analogclock.h'
 **
-** Created: Mon Oct 7 15:55:32 2013
+** Created: Tue Oct 21 23:03:22 2014
 **      by: The Qt Meta Object Compiler version 63 (Qt 4.8.2)
 **
 ** WARNING! All changes made in this file will be lost!
