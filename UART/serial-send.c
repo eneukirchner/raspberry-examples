@@ -10,7 +10,7 @@ int main ()
   int fd ;
   int count ;
   unsigned int nextTime ;
-  char* text = "Hallo BULME 2016";
+  char *text = "Hallo BULME 2016";
   char c;
   int i = 0;
 
