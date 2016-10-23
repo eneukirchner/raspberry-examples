@@ -1,0 +1,15 @@
+#red {background-color: #ff0000; }
+#green {background-color: #00ff00; }
+#blue {background-color: #0000ff; }
+
+#colorfield {
+    /* width: 200px; */
+    height: 30px;
+    margin-top: 18px;
+    margin-left: 20px;
+    margin-right: 20px;
+    background-image: none;
+  }
+
+  
+

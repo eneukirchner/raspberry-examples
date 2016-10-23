@@ -11,8 +11,8 @@ import math
 class VuMeter(QtGui.QWidget):
         def __init__(self, parent=None):
                 QtGui.QWidget.__init__(self, parent)
-                self.inp = alsaaudio.PCM(alsaaudio.PCM_CAPTURE,alsaaudio.PCM_NONBLOCK, 'sysdefault:CARD=Q9000')
-                #self.inp = alsaaudio.PCM(alsaaudio.PCM_CAPTURE,alsaaudio.PCM_NONBLOCK)
+                # self.inp = alsaaudio.PCM(alsaaudio.PCM_CAPTURE,alsaaudio.PCM_NONBLOCK, 'sysdefault:CARD=Q9000')
+                self.inp = alsaaudio.PCM(alsaaudio.PCM_CAPTURE,alsaaudio.PCM_NONBLOCK)
                 self.inp.setchannels(1)                          
                 self.inp.setrate(8000)                           
                 self.inp.setformat(alsaaudio.PCM_FORMAT_S16_LE)  
@@ -38,9 +38,9 @@ class VuMeter(QtGui.QWidget):
                 if l > 0:
                         # Dezibel
                         vu = 20*math.log10(max(audioop.max(data, 2),1)/self.steps)
-                        # vulin = audioop.max(data,2)
+                        vulin = audioop.max(data,2)
                         self.bar.setValue(vu)
-                        # print vulin
+                        print vulin
                       
 def main():
         app = QtGui.QApplication(sys.argv)

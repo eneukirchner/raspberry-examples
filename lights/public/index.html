@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.css">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="http://code.jquery.com/mobile/1.4.4/jquery.mobile-1.4.4.min.js"></script>
+        <script src="socket.io/socket.io.js"></script>
+        <script src="client.js"></script>
+    </head>
+<body>
+
+    <div data-role="page" data-theme="a">
+        <div data-role="header" data-theme="a">
+            <h1>LED color</h1>
+        </div>
+
+        <div data-role="main" class="ui-content">
+                <label for="red">red:</label>
+                <input type="range" name="red" id="red" value="100" min="0" max="255"  
+                    data-highlight="true" data-mini="true" /> 
+                <label for="green">green:</label>
+                <input type="range" name="green" id="green" value="100" min="0" max="255"
+                    data-highlight="true" data-mini="true"/>
+                <label for="blue">blue:</label>
+                <input type="range" name="blue" id="blue" value="100" min="0" max="255" 
+                    data-highlight="true" data-mini="true"/>
+        </div>
+
+
+        <div data-role="footer" data-theme="a">
+		<div id="colorfield" class="ui-widget-content ui-corner-all"></div>
+            	<ul id="content"></ul>
+        </div>
+    </div> 
+
+</body>
+</html>
+
+
